@@ -8,3 +8,10 @@ const player1Dice = document.getElementById('player1Dice');
 const player2Dice = document.getElementById('player2Dice');
 const rollBtn = document.getElementById('rollBtn');
 const resetBtn = document.getElementById('resetBtn');
+
+rollBtn.addEventListener('click', rollDice);
+
+function rollDice() {
+  const randomNumber = Math.floor(Math.random() * 6) + 1;
+  return randomNumber;
+}
