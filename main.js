@@ -41,6 +41,7 @@ rollBtn.addEventListener('click', function() {
 
 resetBtn.addEventListener('click', function() {
   message.textContent = 'Player 1 Turn';
+  player1Turn = true;
   player1Score = 0;
   player2Score = 0;
   player1Scoreboard.textContent = 0;
