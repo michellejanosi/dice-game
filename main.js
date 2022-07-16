@@ -28,5 +28,32 @@ rollBtn.addEventListener('click', function() {
     player2Scoreboard.textContent = player2Score;
   }
 
+  if (player1Score >= 20) {
+    message.textContent = 'Player 1 has won! 🥳';
+    resetGame();
+  } else if (player2Score >= 20) {
+    message.textContent = 'Player 2 has won! 🥳';
+    resetGame();
+  }
+
   player1Turn = !player1Turn;
 });
+
+resetBtn.addEventListener('click', function() {
+  message.textContent = 'Player 1 Turn';
+  player1Score = 0;
+  player2Score = 0;
+  player1Scoreboard.textContent = 0;
+  player2Scoreboard.textContent = 0;
+  player1Dice.textContent = '-';
+  player2Dice.textContent = '-';
+  rollBtn.style.display = 'inline-block';
+  resetBtn.style.display = 'none';
+  player1Dice.classList.add('active');
+  player2Dice.classList.remove('active');
+});
+
+function resetGame() {
+  rollBtn.style.display = 'none';
+  resetBtn.style.display = 'inline-block';
+}
