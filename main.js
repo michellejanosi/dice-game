@@ -33,13 +33,20 @@ rollBtn.addEventListener('click', function() {
     resetGame();
   } else if (player2Score >= 20) {
     message.textContent = 'Player 2 has won! 🥳';
-    resetGame();
+    showDisplayButton();
   }
 
   player1Turn = !player1Turn;
 });
 
-resetBtn.addEventListener('click', function() {
+resetBtn.addEventListener('click', resetGame);
+
+function showDisplayButton() {
+  rollBtn.style.display = 'none';
+  resetBtn.style.display = 'inline-block';
+}
+
+function resetGame() {
   message.textContent = 'Player 1 Turn';
   player1Turn = true;
   player1Score = 0;
@@ -52,9 +59,4 @@ resetBtn.addEventListener('click', function() {
   resetBtn.style.display = 'none';
   player1Dice.classList.add('active');
   player2Dice.classList.remove('active');
-});
-
-function resetGame() {
-  rollBtn.style.display = 'none';
-  resetBtn.style.display = 'inline-block';
 }
